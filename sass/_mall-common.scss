@@ -1,0 +1,658 @@
+@import "./reset";
+
+@media (min-width: 1220px) {
+    .container {
+        width: 1220px !important;
+    }
+}
+
+@mixin flex_b {
+    display        : flex;
+    justify-content: space-between;
+}
+
+@mixin flex_a {
+    display        : flex;
+    justify-content: space-around;
+}
+
+@keyframes bouce {
+
+    0%,
+    50%,
+    100% {
+        transform: translate(0px, 0px);
+    }
+
+    25%,
+    75% {
+        transform: translate(0px, -7px);
+    }
+}
+
+body {
+    header {
+        .top_ad {
+            position: relative;
+            overflow: hidden;
+            width   : 100%;
+            height  : 80px;
+
+            .overscreen {
+                position   : absolute;
+                left       : 50%;
+                top        : 0;
+                margin-left: -2000px;
+                width      : 4000px;
+                text-align : center;
+            }
+
+            .close_top {
+                width      : 19px;
+                height     : 19px;
+                position   : absolute;
+                right      : 0;
+                top        : 0;
+                z-index    : 999;
+                text-align : center;
+                background : rgba(0, 0, 0, .2) none repeat scroll 0 0 !important;
+                line-height: 19px;
+                cursor     : pointer;
+
+                span {
+                    display  : block;
+                    color    : #fff;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .site_topbar {
+            height          : 40px;
+            line-height     : 40px;
+            overflow        : hidden;
+            background-color: #f2f2f2;
+
+            .fl {
+                a {
+                    font-size      : 14px;
+                    color          : #253746;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #ee0a3b;
+                    }
+                }
+
+                span {
+                    height     : 40px;
+                    line-height: 40px;
+                    font-size  : 14px;
+                    padding    : 0 14px;
+                }
+            }
+
+            .fr {
+                display: flex;
+
+                .nav_ad {
+                    margin-right: 10px;
+
+                    a {
+                        color: #ee0a3b;
+                    }
+                }
+
+                .user {
+                    a {
+                        display        : inline-block;
+                        padding-left   : 30px;
+                        height         : 40px;
+                        line-height    : 40px;
+                        font-size      : 14px;
+                        color          : #253746;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: #ee0a3b;
+                        }
+                    }
+                }
+            }
+        }
+
+        .site_header {
+            background-color: #fff;
+
+            .logo {
+                padding: 26px 0;
+
+                img {
+                    width : auto;
+                    height: 44px;
+                }
+            }
+
+            .seacrh {
+                margin-top: 20px;
+
+                form {
+                    position: relative;
+                    height  : 40px;
+
+                    input {
+                        width           : 412px;
+                        height          : 40px;
+                        line-height     : 40px;
+                        padding-left    : 5px;
+                        outline         : 0;
+                        color           : #757575;
+                        border          : 1px solid #ccc;
+                        background-color: #fff;
+                        float           : left;
+                    }
+
+                    button {
+                        height          : 40px;
+                        margin-left     : -1px;
+                        width           : 40px;
+                        cursor          : pointer;
+                        color           : #757575;
+                        border          : 1px solid #ccc;
+                        background-color: #fff;
+                        float           : left;
+
+                        .iconfont {
+                            font-size: 26px;
+                        }
+                    }
+                }
+
+                .hotwords {
+                    h1 {
+                        font-size: 20px;
+                        margin   : 0;
+
+                        span {
+                            &:first-of-type {
+                                strong {
+                                    a {
+                                        margin         : 0;
+                                        display        : inline-block;
+                                        color          : #E53333;
+                                        font-size      : 14px;
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+
+                            &:last-of-type {
+                                strong {
+                                    a {
+                                        margin         : 0;
+                                        display        : inline-block;
+                                        color          : #003399;
+                                        font-size      : 14px;
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+
+        //导航栏
+        .nav {
+            background-color: #263746;
+
+            .head_nav {
+                >li {
+                    width      : 136px;
+                    height     : 40px;
+                    float      : left;
+                    line-height: 40px;
+                    text-align : center;
+
+                    >a {
+                        color          : #fff;
+                        font-size      : 16px;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: #ee0a3b;
+                        }
+                    }
+
+                    &:first-of-type {
+                        position        : relative;
+                        width           : 232px;
+                        background-color: #ee0a3b;
+                        text-align      : left;
+
+                        span {
+                            padding-left: 10px;
+                            font-size   : 16px;
+                            color       : #fff;
+                        }
+
+                        //左侧边栏
+                        .side_nav {
+                            position        : absolute;
+                            left            : 0;
+                            top             : 40px;
+                            width           : 232px;
+                            background-color: #fff !important;
+                            z-index         : 999;
+
+                            ul {
+
+                                li {
+                                    // position      : relative;
+                                    cursor        : pointer;
+                                    width         : 100%;
+                                    height        : 90px;
+                                    padding-left  : 15px;
+                                    padding-top   : 20px;
+                                    padding-bottom: 20px;
+                                    text-align    : left;
+                                    display       : flex;
+
+                                    .title {
+                                        display: flex;
+
+                                        .title_width {
+                                            width: 195px;
+
+                                            >a {
+                                                display        : block;
+                                                width          : 195px;
+                                                height         : 20px;
+                                                line-height    : 20px;
+                                                font-size      : 15px;
+                                                color          : #253746;
+                                                text-decoration: none;
+
+                                                &:hover {
+                                                    color: #ee0a3b;
+                                                }
+                                            }
+
+
+                                            .title_rec {
+                                                height: 25px;
+
+                                                a {
+                                                    display        : block;
+                                                    float          : left;
+                                                    height         : 25px;
+                                                    line-height    : 25px;
+                                                    font-size      : 14px;
+                                                    color          : #757575;
+                                                    text-decoration: none;
+
+                                                    &:first-child~a {
+                                                        margin-left: 5px;
+                                                    }
+
+                                                    &:hover {
+                                                        color: #ee0a3b;
+                                                    }
+                                                }
+                                            }
+
+                                            .iconfont {
+                                                width      : 12px;
+                                                height     : 90px;
+                                                line-height: 90px;
+                                                font-size  : 20px;
+                                                color      : #757575;
+                                            }
+                                        }
+                                    }
+
+                                    .goods-subcate {
+                                        display         : none;
+                                        position        : absolute;
+                                        top             : 0;
+                                        left            : 232px;
+                                        z-index         : 9999;
+                                        width           : 660px;
+                                        height          : 450px;
+                                        background-color: #f1f1f1;
+                                        overflow        : hidden;
+
+                                        .goods-subcate-block.tags {
+                                            margin: 0 auto;
+                                            width : 582px;
+                                            height: 220px;
+
+                                            .subcate_title {
+                                                font-size    : 15px;
+                                                color        : #d90936;
+                                                height       : 64px;
+                                                line-height  : 64px;
+                                                border-bottom: 1px solid #e0e0e0;
+                                            }
+
+                                            .subcate_items {
+                                                a {
+                                                    display        : block;
+                                                    float          : left;
+                                                    width          : 100px;
+                                                    font-size      : 14px;
+                                                    padding-top    : 23px;
+                                                    color          : #757575;
+                                                    text-decoration: none;
+
+                                                    &:hover {
+                                                        color: #ee0a3b;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .goods-subcate-block.hot {
+                                            margin: 0 auto;
+                                            width : 582px;
+                                            height: 230px;
+
+                                            .subcate_title {
+                                                font-size    : 15px;
+                                                color        : #d90936;
+                                                height       : 64px;
+                                                line-height  : 64px;
+                                                border-bottom: 1px solid #e0e0e0;
+                                            }
+
+                                            .subcate_items {
+                                                padding-top: 30px;
+
+                                                a {
+                                                    display        : block;
+                                                    float          : left;
+                                                    width          : 72px;
+                                                    font-size      : 14px;
+                                                    line-height    : 25px;
+                                                    color          : #757575;
+                                                    text-align     : center;
+                                                    text-decoration: none;
+
+                                                    &:hover {
+                                                        color: #ee0a3b;
+                                                    }
+
+                                                    &:first-child~a {
+                                                        margin-left: 50px;
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(3) {
+                        a {
+                            color      : #ee0a3b;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section {
+        .goods_perview {
+            position: relative;
+
+            .zoomPup {
+                display         : none;
+                left            : 0;
+                top             : 0;
+                width           : 169px;
+                height          : 142px;
+                position        : absolute;
+                border-width    : 1px;
+                background-color: #fff;
+                border          : 1px solid #ccc;
+                opacity         : .6;
+                cursor          : crosshair;
+                z-index         : 100;
+            }
+
+            .zoomWindow {
+                display : none;
+                position: absolute;
+                left    : 450px;
+                top     : 0px;
+                z-index : 100;
+                width   : 500px;
+                height  : 420px;
+                overflow: hidden;
+
+                img {
+                    position: absolute;
+                }
+            }
+        }
+    }
+
+    footer {
+        padding-top     : 10px;
+        background-color: #fff;
+
+        .footer_top {
+            padding      : 30px 0;
+            border-bottom: 1px solid #f5f5f5;
+
+            .col-md-3 {
+                display    : flex;
+                align-items: center;
+
+                .iconfont {
+                    margin-left: 25px;
+                    font-size  : 45px;
+                }
+
+                span {
+                    font-size  : 16px;
+                    color      : #616161;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .footer_links {
+            padding: 35px 0;
+
+            .main_info {
+                overflow      : hidden;
+                padding-bottom: 35px;
+
+                dl {
+                    float        : left;
+                    width        : 161px;
+                    margin-bottom: 0;
+
+                    dt {
+                        font-size     : 14px;
+                        color         : #3a3a3a;
+                        padding-bottom: 15px;
+                        font-weight   : 400;
+                    }
+
+                    dd {
+                        padding-bottom: 5px;
+
+                        a {
+                            font-size      : 12px;
+                            color          : #757575;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .fr {
+                    width      : 576px;
+                    border-left: 1px solid #f5f5f5;
+
+                    .qrcode {
+                        float       : left;
+                        padding-left: 90px;
+                    }
+
+                    .contact {
+                        float         : right;
+                        display       : flex;
+                        flex-direction: column;
+                        align-items   : center;
+                        text-align    : center;
+
+                        h5 {
+                            font-size  : 23px;
+                            color      : #ee0a3b;
+                            width      : 153px;
+                            height     : 33px;
+                            line-height: 33px;
+                            margin     : 0;
+                        }
+
+                        span {
+                            font-size : 12px;
+                            color     : #757575;
+                            width     : 153px;
+                            text-align: left;
+                        }
+
+                        button {
+                            margin-top      : 15px;
+                            font-weight     : 400;
+                            font-size       : 12px;
+                            background-color: #fff;
+                            color           : #ee0a3b;
+                            border          : 1px solid #ee0a3b;
+                            padding         : 0;
+                            width           : 153px;
+                            height          : 28px;
+                            line-height     : 28px;
+                            display         : flex;
+                            align-items     : center;
+                            justify-content : center;
+
+                            &:hover {
+                                background-color: #ee0a3b;
+                                color           : #fff;
+                            }
+
+                            img {
+                                display       : inline-block;
+                                width         : 20px;
+                                height        : 18px;
+                                margin-right  : 10px;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .copyright {
+                span {
+                    display        : flex;
+                    align-items    : center;
+                    justify-content: center;
+                    font-size      : 12px;
+                    color          : #a0a0a0;
+
+                    img {
+                        margin-left: 10px;
+                        width      : 30px;
+                        height     : 38.36px;
+                    }
+
+                    a {
+                        font-size      : 12px;
+                        color          : #757575;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: #ee0a3b;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .float_service {
+        width   : 65px;
+        height  : 230px;
+        position: fixed;
+        right   : 10px;
+        bottom  : 80px;
+        z-index : 999;
+
+        .bouce {
+            float    : right;
+            animation: bouce 2s ease infinite;
+
+            &:hover>.dialog {
+                display: block;
+            }
+
+            img {
+                float: right;
+                width: 65px;
+            }
+
+            .dialog {
+                display         : none;
+                position        : relative;
+                top             : -49px;
+                width           : 256px !important;
+                height          : 312px !important;
+                background-color: transparent !important;
+                padding-left    : 25px !important;
+                padding-top     : 20px !important;
+                background      : url(../images/mall/20160725143242_84921.png) no-repeat left top;
+
+                .key_say {
+                    font-size    : 14px;
+                    color        : #253746;
+                    margin-bottom: 20px;
+                }
+
+                .dialog-info {
+                    margin-bottom: 32px;
+
+                    span {
+                        display  : block;
+                        font-size: 14px;
+                        color    : #253746;
+                    }
+
+                    a {
+                        width  : 129px;
+                        height : 28px;
+                        display: block;
+
+                        img {
+                            display: block;
+                            width  : 129px;
+                            height : 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
